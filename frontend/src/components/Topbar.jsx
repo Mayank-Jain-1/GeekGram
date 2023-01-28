@@ -1,5 +1,4 @@
 import React from "react";
-import { IoIosNotificationsOutline } from "react-icons/io";
 import Logo from "./Logo";
 import NotifBtn from "./NotifBtn";
 import SearchBar from "./SearchBar";
