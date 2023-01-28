@@ -4,9 +4,8 @@ import { CgSearch } from "react-icons/cg";
 const SearchBar = () => {
 
   const [focus, setFocus] = useState(false)
-  console.log(focus);
   return (
-    <div className="flex items-center mr-2 py-2 px-3 bg-brandBlue rounded-lg w-40 ">
+    <div className="flex items-center mx-2 py-2 px-3 bg-brandGrey rounded-lg ">
       <CgSearch className={`${focus && 'hidden'} mr-3 peer-focus:hidden text-xl`} />
       <input
         onFocus={() => setFocus(true)}
