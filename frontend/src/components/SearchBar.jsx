@@ -5,7 +5,7 @@ const SearchBar = () => {
 
   const [focus, setFocus] = useState(false)
   return (
-    <div className="flex items-center mx-2 py-2 px-3 bg-brandGrey rounded-lg ">
+    <div className="flex w-44 sm:w-64 items-center mx-2 py-2 px-3 bg-brandGrey rounded-lg ">
       <CgSearch className={`${focus && 'hidden'} mr-3 peer-focus:hidden text-xl`} />
       <input
         onFocus={() => setFocus(true)}

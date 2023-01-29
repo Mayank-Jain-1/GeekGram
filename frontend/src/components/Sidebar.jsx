@@ -8,7 +8,7 @@ import Logo from './Logo';
 const Sidebar = () => {
   return (
     <div className='fixed bottom-0 left-0 h-11 w-full bg-brandLightBase flex items-center justify-evenly 
-    md:h-full md:w-auto md:px-2 md:py-5 md:flex-col md:justify-between md:items-center 
+    md:h-full md:w-20 md:px-2 md:py-5 md:flex-col md:justify-between md:items-center 
     lg:items-start lg:w-64
     '>
       <div className='flex w-full justify-evenly md:flex-col'>
