@@ -11,7 +11,7 @@ const Stories = () => {
   }
   )
   return (
-    <div className='flex space-x-6 overflow-x-scroll w-full py-7 px-5 scroll-smooth scrollbar-hide '>
+    <div className='flex space-x-0 overflow-x-scroll w-full py-7 px-6 scroll-smooth scrollbar-hide '>
       {stories}
     </div>
   )
