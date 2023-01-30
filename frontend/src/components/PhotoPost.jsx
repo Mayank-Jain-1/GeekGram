@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsDot, BsThreeDots } from "react-icons/bs";
-import { ImArrowDown, ImArrowUp } from 'react-icons/im'
-import {TbArrowBigTop} from 'react-icons/tb'
+import { ImArrowDown, ImArrowUp } from "react-icons/im";
+import { TbArrowBigTop } from "react-icons/tb";
+import PostCommentBtn from "./PostCommentBtn";
 import PostLikeBtn from "./PostLikeBtn";
+import PostShareBtn from "./PostShareBtn";
 
 const PhotoPost = ({}) => {
+  const [isLiked, setIsLiked] = useState(false);
+  const [commentsOpen, setCommentsOpen] = useState(false);
   return (
-    <div>
+    <div className="border-y border-brandGrey mb-10">
       <section className="header w-full h-16 flex justify-between items-center px-5 text-xs">
         <div className="flex items-center">
           <a href="" className="">
@@ -28,20 +32,49 @@ const PhotoPost = ({}) => {
           <BsThreeDots className="text-xl group-hover:text-brandDark" />
         </button>
       </section>
-      <section className="border border-brandGrey h-fit ">
-      <img src="https://images.pexels.com/photos/705425/pexels-photo-705425.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" className="w-full h-full max-h-[550px] object-contain"/>
-      </section>
 
-      <section className="flex items-center py-3 px-5 text-xl">
-        <PostLikeBtn />
-        {/* <ImArrowUp />
+
+      <div>
+        <section className="border border-brandGrey h-fit ">
+          <img
+            src="https://images.pexels.com/photos/705425/pexels-photo-705425.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+            className="w-full h-full max-h-[550px] object-contain"
+          />
+        </section>
+
+        <section className="flex items-center py-3 px-4 text-xl justify-between">
+          <div className="flex items-center">
+            <PostLikeBtn
+              className="text-2xl"
+              flag={isLiked}
+              onClick={() => setIsLiked(!isLiked)}
+            />
+            {/* Pending Onclick Funtion */}
+            <PostCommentBtn className="px-6" />
+          </div>
+          {/* Pending ON share function */}
+          <PostShareBtn className="text-2xl" />
+
+          {/* <ImArrowUp />
         <TbArrowBigTop className="text-2xl"/>
-        <ImArrowDown className="mx-3"/> */}
-      </section>
-      <br />
-      <br />
-      <br />
-      <br />
+      <ImArrowDown className="mx-3"/> */}
+        </section>
+
+        <section className="px-4">
+          <p className="font-medium">Number Likes</p>
+          <p className="font-medium">
+            {" "}
+            Name <span className="font-light">
+              Here will be the caption
+            </span>{" "}
+          </p>
+          <button className="my-3 text-sm text-brandDark">
+            View all number comments../
+          </button>
+        </section>
+        
+      </div>
     </div>
   );
 };

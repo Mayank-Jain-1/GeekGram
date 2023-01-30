@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-const PostLikeBtn = ({flag, onClick}) => {
-  const [iflag, setIflag] = useState(false)
+const PostLikeBtn = ({flag, onClick,className}) => {
   return (
-    <button onClick={() => setIflag(!iflag)}
-    className='text-2xl'
+    <button onClick={onClick}
+    className={`${className}`}
     >
-      {!iflag ? <FaRegHeart />
+      {!flag ? <FaRegHeart />
       : <FaHeart className='text-brandAqua animate-scaleUpDown'/>}
     </button>
   )
