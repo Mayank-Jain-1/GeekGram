@@ -7,7 +7,7 @@ const Topbar = () => {
 
   const isNotif = true
   return (
-    <div className="fixed top-0 right-0 w-full h-16 bg-brandLightBase flex items-center justify-between px-3 md:hidden">
+    <div className="fixed top-0 right-0 w-full h-16 bg-brandLightBase flex items-center justify-between px-3 md:hidden z-20">
       <Logo/>
       <div className="flex items-center ">
         <SearchBar />
