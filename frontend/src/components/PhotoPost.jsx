@@ -37,6 +37,7 @@ const PhotoPost = ({}) => {
       <div>
         <section className="border border-brandGrey h-fit ">
           <img
+          onDoubleClick={() => setIsLiked(!isLiked)}
             src="https://images.pexels.com/photos/705425/pexels-photo-705425.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
             alt=""
             className="w-full h-full max-h-[550px] object-contain"
@@ -70,10 +71,10 @@ const PhotoPost = ({}) => {
             </span>{" "}
           </p>
           <button className="my-3 text-sm text-brandDark">
-            View all number comments../
+            View all number comments...
           </button>
         </section>
-        
+
       </div>
     </div>
   );
