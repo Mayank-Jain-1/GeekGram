@@ -10,14 +10,17 @@ import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CodePostAnswers from "./CodePostAnswers";
 
 const CodePost = ({
-  languages = ["HTML", "CSS", "JavaScript"],
+  username, 
+  avatar,
+  languages,
   status,
   title,
   description,
+  answers
 }) => {
   title =
     "Issue with some react component. Cannot open it using this onClick Function";
-  status = "verified";
+  // status = "verified";
   description = `this is the description Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, maxime!
   ${"```js \n const x = 24; \nconst that = false\n ```"}
   
@@ -34,17 +37,17 @@ const CodePost = ({
           <div className="flex items-center border-r border-brandGrey flex-shrink-0">
             <a href="" className="">
               <img
-                src="https://robohash.org/hicveldicta.png"
+                src={avatar}
                 alt=""
                 className="w-10 h-10 rounded-full bg-black"
               />
             </a>
             <a href="">
-              <p className="mx-3">Name</p>
+              <p className="mx-3">{username}</p>
             </a>
           </div>
           <div className="flex items-center space-x-3 px-2">
-            {languages.map((language) => (
+            {languages && languages.map((language) => (
               <p className="p-1 bg-brandDark rounded-md">{language}</p>
             ))}
             {/* <p>{languages}</p> */}
@@ -92,7 +95,7 @@ const CodePost = ({
           }}
         />
       </section>
-      <CodePostAnswers />
+      <CodePostAnswers answers={answers}/>
 
       <br />
       <br />

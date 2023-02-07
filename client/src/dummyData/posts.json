@@ -1,0 +1,62 @@
+[
+    {
+        "post": "photo",
+        "username": "user1",
+        "time": "12h",
+        "image_link": "https://www.w3schools.com/w3images/fjords.jpg",
+        "avatar": "https://www.w3schools.com/w3images/avatar2.png"
+    },
+    {
+        "post": "photo",
+        "username": "user2",
+        "time": "5h",
+        "image_link": "https://www.w3schools.com/w3images/mountains.jpg",
+        "avatar": "https://www.w3schools.com/w3images/avatar5.png"
+    },
+    {
+        "post": "code",
+        "username": "user3",
+        "time": "17h",
+        "languages": ["Python", "Java"],
+        "status": "",
+        "answers": [
+            {
+                "username": "coder1",
+                "avatar": "https://www.w3schools.com/w3images/avatar6.png",
+                "upvotes": 3,
+                "downvotes": 0,
+                "answer": "```python\nprint(\"Hello World\")\n```"
+            },
+            {
+                "username": "coder2",
+                "avatar": "https://www.w3schools.com/w3images/avatar7.png",
+                "upvotes": 2,
+                "downvotes": 1,
+                "answer": "```java\nSystem.out.println(\"Hello World\");\n```"
+            }
+        ]
+    },
+    {
+        "post": "code",
+        "username": "user4",
+        "time": "21h",
+        "languages": ["C++"],
+        "status": "answered",
+        "answers": [
+            {
+                "username": "coder3",
+                "avatar": "https://www.w3schools.com/w3images/avatar8.png",
+                "upvotes": 5,
+                "downvotes": 2,
+                "answer": "```c++\n#include <iostream>\nint main() {\n    std::cout << \"Hello World\" << std::endl;\n    return 0;\n}\n```"
+            }
+        ]
+    },
+    {
+        "post": "photo",
+        "username": "user5",
+        "time": "2h",
+        "image_link": "https://www.w3schools.com/w3images/nature.jpg",
+        "avatar": "https://www.w3schools.com/w3images/avatar9.png"
+    }
+]

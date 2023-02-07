@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import PostAnswer from "./CodePostAnswer";
+// import answers from  '../dummyData/dummyAnswers.json'
 
-const CodePostAnswers = () => {
+const CodePostAnswers = (answers) => {
+  console.log(answers)
   const [isOpen, setIsOpen] = useState(false);
   const answersCount = 3
   const description = `Pretty simple asnwerall you need to do is this. 
@@ -24,7 +26,7 @@ const CodePostAnswers = () => {
           className="flex items-center space-x-3  p-1"
         >
           <h6 className="text-brandBlue">Answers</h6>
-          {isOpen ? (
+          {!isOpen ? (
             <AiFillCaretDown className="text-lg" />
           ) : (
             <AiFillCaretUp className="text-lg" />
@@ -33,15 +35,19 @@ const CodePostAnswers = () => {
         <p className="flex items-center justify-center bg-brandGrey rounded-full h-8 w-8">{answersCount}</p>
       </div>
       <div
-        className={`${isOpen ? "max-h-0" : "max-h-screen"} overflow-y-scroll duration-300`}
+        className={`${!isOpen ? "max-h-0" : "max-h-[10000px]"} overflow-y-scroll duration-300`}
       >
-      <PostAnswer 
-      avatar={'https://image.shutterstock.com/mosaic_250/2780032/1194497251/stock-photo-portrait-of-smiling-red-haired-millennial-man-looking-at-camera-sitting-in-caf-or-coffeeshop-1194497251.jpg'}
-      username='Hailer John'
-      answer={description}
-      upvotes = {20}
-      downvotes={5}
-      />
+      {answers.answers.map(answer => {
+          return <PostAnswer 
+          avatar={answer.avatar}
+          username={answer.username}
+          answer={answer.answer}
+          upvotes = {answer.upvotes}
+          downvotes={answer.downvotes}
+          />
+        })
+      }
+
       </div>
     </section>
   );

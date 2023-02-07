@@ -18,7 +18,7 @@ const PostAnswer = ({ avatar, username, answer, upvotes, downvotes }) => {
       </div>
       <div className="flex">
         <div className="text-2xl px-2 pt-5 flex  flex-col items-center">
-          <button>
+          <button>      
             <AiFillCaretUp />
           </button>
           <p className="text-lg">{upvotes - downvotes || 0}</p>

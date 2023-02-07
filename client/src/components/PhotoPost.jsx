@@ -6,7 +6,7 @@ import PostCommentBtn from "./PostCommentBtn";
 import PostLikeBtn from "./PostLikeBtn";
 import PostShareBtn from "./PostShareBtn";
 
-const PhotoPost = ({}) => {
+const PhotoPost = ({username, avatar, photo, time}) => {
   const [isLiked, setIsLiked] = useState(false);
   const [commentsOpen, setCommentsOpen] = useState(false);
   return (
@@ -15,17 +15,17 @@ const PhotoPost = ({}) => {
         <div className="flex items-center">
           <a href="" className="">
             <img
-              src="https://robohash.org/hicveldicta.png"
+              src={avatar}
               alt=""
               className="w-10 h-10 rounded-full bg-black"
             />
           </a>
           <div className="mx-3">
-            <p className="text-brand">Name</p>
+            <p className="text-brand">{username}</p>
           </div>
           <div className="flex items-center">
             <BsDot className="text-brandDark" />
-            <p className="text-brandDark">21h</p>
+            <p className="text-brandDark">{time}</p>
           </div>
         </div>
         <button className="relative -right-4 p-3 group">
@@ -38,7 +38,7 @@ const PhotoPost = ({}) => {
         <section className="border border-brandGrey h-fit ">
           <img
           onDoubleClick={() => setIsLiked(!isLiked)}
-            src="https://images.pexels.com/photos/705425/pexels-photo-705425.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            src={photo}
             alt=""
             className="w-full h-full max-h-[550px] object-contain"
           />
@@ -66,7 +66,7 @@ const PhotoPost = ({}) => {
           <p className="font-medium">Number Likes</p>
           <p className="font-medium">
             {" "}
-            Name <span className="font-light">
+            {username} <span className="font-light">
               Here will be the caption
             </span>{" "}
           </p>
