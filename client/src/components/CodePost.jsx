@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BsDot, BsThreeDots } from "react-icons/bs";
-import { AiOutlineEdit } from "react-icons/ai";
 import { FaCheck } from "react-icons/fa";
 import { GoIssueOpened } from "react-icons/go";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
@@ -27,14 +26,6 @@ const CodePost = ({
   >This is the problem
   `;
 
-  const highlighter = (value, language) => {
-    const codeString = "(num) => num + 1";
-    return (
-      <SyntaxHighlighter language={language} style={tomorrow}>
-        {value}{" "}
-      </SyntaxHighlighter>
-    );
-  };
 
   return (
     <div className="border-y border-brandGrey mb-10">
@@ -78,8 +69,7 @@ const CodePost = ({
 
       <section className="problem p-3 border border-brandGrey">
         <h4 className="mb-3">{title}</h4>
-        <ReactMarkdown
-          children={description}
+        <ReactMarkdown          children={description}
           remarkPlugins={[remarkGfm]}
           className="w-full p-3"
           components={{
