@@ -24,7 +24,7 @@
     @apply text-lg;
   }
   blockquote{
-    @apply  bg-slate-500 p-2 my-3;
+    @apply  bg-brandGrey p-2 my-3;
   }
 }
 

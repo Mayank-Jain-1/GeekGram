@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { BsDot, BsThreeDots } from "react-icons/bs";
-import { AiOutlineEdit } from "react-icons/ai"
+import { AiOutlineEdit } from "react-icons/ai";
 import { FaCheck } from "react-icons/fa";
 import { GoIssueOpened } from "react-icons/go";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
-import remarkGfm from 'remark-gfm'
+import remarkGfm from "remark-gfm";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
+import CodePostAnswers from "./CodePostAnswers";
 
-const CodePost = ({ languages = ["HTML","CSS","JavaScript"], status, title, description }) => {
+const CodePost = ({
+  languages = ["HTML", "CSS", "JavaScript"],
+  status,
+  title,
+  description,
+}) => {
   title =
     "Issue with some react component. Cannot open it using this onClick Function";
   status = "verified";
@@ -19,9 +25,7 @@ const CodePost = ({ languages = ["HTML","CSS","JavaScript"], status, title, desc
   Also Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officia porro, iste voluptas explicabo sed nisi illo ex. Deleniti accusamus vel recusandae delectus dolorum ducimus pariatur iure neque, voluptas quibusdam.
   
   >This is the problem
-  `
-  
-
+  `;
 
   const highlighter = (value, language) => {
     const codeString = "(num) => num + 1";
@@ -49,7 +53,9 @@ const CodePost = ({ languages = ["HTML","CSS","JavaScript"], status, title, desc
             </a>
           </div>
           <div className="flex items-center space-x-3 px-2">
-            {languages.map( language => <p className="p-1 bg-brandDark rounded-md">{language}</p> )}
+            {languages.map((language) => (
+              <p className="p-1 bg-brandDark rounded-md">{language}</p>
+            ))}
             {/* <p>{languages}</p> */}
             <span className="flex items-center">
               <BsDot className="text-brandDark" />
@@ -70,34 +76,33 @@ const CodePost = ({ languages = ["HTML","CSS","JavaScript"], status, title, desc
         </button>
       </section>
 
-      <div className="h-auto overflow-hidden duration-300">
-        <section className="problem p-2 border border-brandGrey">
-
-          <h4 className="mb-3">{title}</h4>
-          <ReactMarkdown children={description}
-            remarkPlugins={[remarkGfm]}
-            className="w-full p-3"
-            components={{
-              code({ node, inline, className, children, ...props }) {
-                const match = /language-(\w+)/.exec(className || "");
-                return !inline && match ? (
-                  <SyntaxHighlighter
-                    children={String(children).replace(/\n$/, "")}
-                    style={tomorrow}
-                    language={match[1]}
-                    PreTag="div"
-                    {...props}
-                  />
-                ) : (
-                  <code className={className} {...props}>
-                    {children}
-                  </code>
-                );
-              },
-            }}
-          />
-        </section>
-      </div>
+      <section className="problem p-3 border border-brandGrey">
+        <h4 className="mb-3">{title}</h4>
+        <ReactMarkdown
+          children={description}
+          remarkPlugins={[remarkGfm]}
+          className="w-full p-3"
+          components={{
+            code({ node, inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || "");
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  children={String(children).replace(/\n$/, "")}
+                  style={tomorrow}
+                  language={match[1]}
+                  PreTag="div"
+                  {...props}
+                />
+              ) : (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              );
+            },
+          }}
+        />
+      </section>
+      <CodePostAnswers />
 
       <br />
       <br />
@@ -116,12 +121,13 @@ const CodePost = ({ languages = ["HTML","CSS","JavaScript"], status, title, desc
 
 export default CodePost;
 
-
-          {/* <div className="w-full h-8 bg-brandGrey flex items-center">
+{
+  /* <div className="w-full h-8 bg-brandGrey flex items-center">
               <button className="h-full px-3 flex items-center space-x-2">
                 <AiOutlineEdit /> 
                 <p>Edit</p>
               </button>
               <button>Preview</button>
               <button></button>
-          </div> */}
+          </div> */
+}
