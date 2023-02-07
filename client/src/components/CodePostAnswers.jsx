@@ -4,7 +4,7 @@ import PostAnswer from "./CodePostAnswer";
 // import answers from  '../dummyData/dummyAnswers.json'
 
 const CodePostAnswers = (answers) => {
-  console.log(answers)
+  // console.log(answers)
   const [isOpen, setIsOpen] = useState(false);
   const answersCount = 3
   const description = `Pretty simple asnwerall you need to do is this. 
@@ -37,8 +37,9 @@ const CodePostAnswers = (answers) => {
       <div
         className={`${!isOpen ? "max-h-0" : "max-h-[10000px]"} overflow-y-scroll duration-300`}
       >
-      {answers.answers.map(answer => {
+      {answers.answers.map((answer,index) => {
           return <PostAnswer 
+          key={index}
           avatar={answer.avatar}
           username={answer.username}
           answer={answer.answer}

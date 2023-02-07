@@ -96,18 +96,6 @@ const CodePost = ({
         />
       </section>
       <CodePostAnswers answers={answers}/>
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 };

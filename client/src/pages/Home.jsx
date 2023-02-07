@@ -10,11 +10,11 @@ const Home = () => {
       <div className='pt-16 md:pt-0 flex flex-col max-w-2xl w-full h-full'>
         <Stories />
         {/* <PhotoPost />  */}
-        {posts.map(post => {
+        {posts.map((post,index) => {
           if(post.post === 'photo'){
-            return <PhotoPost username={post.username} avatar={post.avatar} photo={post.image_link} time={post.time}/>
+            return <PhotoPost key={index} username={post.username} avatar={post.avatar} photo={post.image_link} time={post.time}/>
           }else if(post.post ==='code') {
-            return <CodePost username={post.username} avatar={post.avatar} status={post.status} answers={post.answers}/>
+            return <CodePost key={index} username={post.username} avatar={post.avatar} status={post.status} answers={post.answers}/>
           }
         })}
       </div>

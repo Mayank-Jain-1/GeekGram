@@ -5,7 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 
-const PostAnswer = ({ avatar, username, answer, upvotes, downvotes }) => {
+const CodePostAnswer = ({ avatar, username, answer, upvotes, downvotes }) => {
   return (
     <div className="p-5">
       <div className="flex items-center space-x-4">
@@ -54,4 +54,4 @@ const PostAnswer = ({ avatar, username, answer, upvotes, downvotes }) => {
   );
 };
 
-export default PostAnswer;
+export default CodePostAnswer;
