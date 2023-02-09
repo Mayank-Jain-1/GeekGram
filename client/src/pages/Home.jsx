@@ -14,7 +14,7 @@ const Home = () => {
           if(post.post === 'photo'){
             return <PhotoPost key={index} username={post.username} avatar={post.avatar} photo={post.image_link} time={post.time}/>
           }else if(post.post ==='code') {
-            return <CodePost key={index} username={post.username} avatar={post.avatar} status={post.status} answers={post.answers}/>
+            return <CodePost key={index} username={post.username} avatar={post.avatar} question={post.question} status={post.status} answers={post.answers} languages={post.languages}/>
           }
         })}
       </div>

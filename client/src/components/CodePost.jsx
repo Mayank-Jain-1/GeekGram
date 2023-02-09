@@ -10,25 +10,17 @@ import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CodePostAnswers from "./CodePostAnswers";
 
 const CodePost = ({
-  username, 
+  username,
   avatar,
   languages,
+  question,
   status,
   title,
-  description,
-  answers
+  answers,
 }) => {
   title =
     "Issue with some react component. Cannot open it using this onClick Function";
   // status = "verified";
-  description = `this is the description Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, maxime!
-  ${"```js \n const x = 24; \nconst that = false\n ```"}
-  
-  Also Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officia porro, iste voluptas explicabo sed nisi illo ex. Deleniti accusamus vel recusandae delectus dolorum ducimus pariatur iure neque, voluptas quibusdam.
-  
-  >This is the problem
-  `;
-
 
   return (
     <div className="border-y border-brandGrey mb-10">
@@ -47,9 +39,12 @@ const CodePost = ({
             </a>
           </div>
           <div className="flex items-center space-x-3 px-2">
-            {languages && languages.map((language) => (
-              <p className="p-1 bg-brandDark rounded-md">{language}</p>
-            ))}
+            {languages &&
+              languages.map((language) => {
+                return (
+                  <p className="p-1.5 bg-brandDark rounded-md">{language}</p>
+                );
+              })}
             {/* <p>{languages}</p> */}
             <span className="flex items-center">
               <BsDot className="text-brandDark" />
@@ -72,7 +67,8 @@ const CodePost = ({
 
       <section className="problem p-3 border border-brandGrey">
         <h4 className="mb-3">{title}</h4>
-        <ReactMarkdown          children={description}
+        <ReactMarkdown
+          children={question}
           remarkPlugins={[remarkGfm]}
           className="w-full p-3"
           components={{
@@ -87,7 +83,7 @@ const CodePost = ({
                   {...props}
                 />
               ) : (
-                <code className={className} {...props}>
+                <code className={"whitespace-normal"} {...props}>
                   {children}
                 </code>
               );
@@ -95,7 +91,7 @@ const CodePost = ({
           }}
         />
       </section>
-      <CodePostAnswers answers={answers}/>
+      <CodePostAnswers answers={answers} />
     </div>
   );
 };

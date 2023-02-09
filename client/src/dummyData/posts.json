@@ -1,62 +1,159 @@
 [
-    {
-        "post": "photo",
-        "username": "user1",
-        "time": "12h",
-        "image_link": "https://www.w3schools.com/w3images/fjords.jpg",
-        "avatar": "https://www.w3schools.com/w3images/avatar2.png"
-    },
-    {
-        "post": "photo",
-        "username": "user2",
-        "time": "5h",
-        "image_link": "https://www.w3schools.com/w3images/mountains.jpg",
-        "avatar": "https://www.w3schools.com/w3images/avatar5.png"
-    },
-    {
-        "post": "code",
-        "username": "user3",
-        "time": "17h",
-        "languages": ["Python", "Java"],
-        "status": "",
-        "answers": [
-            {
-                "username": "coder1",
-                "avatar": "https://www.w3schools.com/w3images/avatar6.png",
-                "upvotes": 3,
-                "downvotes": 0,
-                "answer": "```python\nprint(\"Hello World\")\n```"
-            },
-            {
-                "username": "coder2",
-                "avatar": "https://www.w3schools.com/w3images/avatar7.png",
-                "upvotes": 2,
-                "downvotes": 1,
-                "answer": "```java\nSystem.out.println(\"Hello World\");\n```"
-            }
-        ]
-    },
-    {
-        "post": "code",
-        "username": "user4",
-        "time": "21h",
-        "languages": ["C++"],
-        "status": "answered",
-        "answers": [
-            {
-                "username": "coder3",
-                "avatar": "https://www.w3schools.com/w3images/avatar8.png",
-                "upvotes": 5,
-                "downvotes": 2,
-                "answer": "```c++\n#include <iostream>\nint main() {\n    std::cout << \"Hello World\" << std::endl;\n    return 0;\n}\n```"
-            }
-        ]
-    },
-    {
-        "post": "photo",
-        "username": "user5",
-        "time": "2h",
-        "image_link": "https://www.w3schools.com/w3images/nature.jpg",
-        "avatar": "https://www.w3schools.com/w3images/avatar9.png"
-    }
+  {
+    "post": "photo",
+    "username": "JohnDoe",
+    "time": "12h",
+    "avatar": "https://randomuser.me/api/portraits/men/23.jpg",
+    "image_link": "https://www.w3schools.com/w3images/fjords.jpg"
+  },
+  {
+    "post": "code",
+    "username": "Sarah",
+    "avatar": "https://randomuser.me/api/portraits/women/34.jpg",
+    "time": "6h",
+    "languages": ["javascript", "html", "css"],
+    "status": "",
+    "answers": [
+      {
+        "username": "Robert",
+        "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
+        "answer": "This is a sample answer in markdown format.",
+        "upvotes": 5,
+        "downvotes": 1
+      },
+      {
+        "username": "JohnDoe",
+        "avatar": "https://randomuser.me/api/portraits/men/23.jpg",
+        "answer": "This is another sample answer in markdown format.",
+        "upvotes": 2,
+        "downvotes": 0
+      },
+      {
+        "username": "JaneDoe",
+        "avatar": "https://randomuser.me/api/portraits/women/11.jpg",
+        "answer": "This is a third sample answer in markdown format.",
+        "upvotes": 1,
+        "downvotes": 0
+      }
+    ]
+  },
+  {
+    "post": "code",
+    "username": "Robert",
+    "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
+    "time": "3h",
+    "languages": ["python"],
+    "status": "answered",
+    "answers": [
+      {
+        "username": "JaneDoe",
+        "avatar": "https://randomuser.me/api/portraits/women/11.jpg",
+        "answer": "This is a sample answer in markdown format.\n\n```python\ndef add(a, b):\n    return a + b\n\nprint(add(1, 2))\n```\n\nAs you can see, this is a code snippet written in Python. It defines a simple function that adds two numbers and returns the result. The markdown syntax allows you to format the text and code snippets in a readable way.",
+        "upvotes": 3,
+        "downvotes": 0
+      },
+      {
+        "username": "JohnDoe",
+        "avatar": "https://randomuser.me/api/portraits/men/23.jpg",
+        "answer": "This is another sample answer in markdown format.\n\nHere's an example of how to use the previous code:\n\n```python\nresult = add(2, 3)\nprint(result)\n```\n\nAs you can see, the function `add` is used to add two numbers and store the result in the variable result. The print function is used to display the result on the screen. Markdown formatting can be used to add headings, lists, and other formatting to your text.",
+        "upvotes": 2,
+        "downvotes": 0
+      },
+      {
+        "username": "JaneSmith",
+        "avatar": "https://randomuser.me/api/portraits/women/33.jpg",
+        "answer": "This is the third sample answer in markdown format.\n\nYou can also use markdown to add links, images, and other types of media to your text. For example:\n\nPython logo\n\nHere's a link to the Python website.\n\nBy using markdown, you can make your text and code snippets more readable and engaging for others.",
+        "upvotes": 1,
+        "downvotes": 0
+      }
+    ]
+  },
+  {
+    "post": "photo",
+    "username": "JaneDoe",
+    "time": "1h",
+    "avatar": "https://randomuser.me/api/portraits/women/11.jpg",
+    "image_link": "https://www.w3schools.com/w3images/mountains.jpg"
+  },
+  {
+    "post": "code",
+    "username": "Robert",
+    "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
+    "time": "3h",
+    "question": "#### Problem Statement:\n\nWrite a function in Python that takes a string as an argument and returns the number of vowels in the string.\n\n#### Signature\n```python \ndef count_vowels(s: str) -> int: \n```\n\n#### Example\n```python\nassert count_vowels(\"hello\") == 2\nassert count_vowels(\"world\") == 2\n```\n\n#### Constraints\n* The input string `s` will have length 1 <= len(s) <= 10^6.",
+    "languages": ["python"],
+    "status": "answered",
+    "answers": [
+      {
+        "username": "JaneDoe",
+        "avatar": "https://randomuser.me/api/portraits/women/11.jpg",
+        "answer": "This is a sample answer in markdown format.",
+        "upvotes": 3,
+        "downvotes": 0
+      }
+    ]
+  },
+  {
+    "post": "code",
+    "username": "Sarah",
+    "avatar": "https://randomuser.me/api/portraits/women/34.jpg",
+    "time": "6h",
+    "languages": ["javascript", "html", "css"],
+    "status": "",
+    "answers": [
+      {
+        "username": "Robert",
+        "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
+        "answer": "This is a sample answer in markdown format.",
+        "upvotes": 5,
+        "downvotes": 1
+      },
+      {
+        "username": "JohnDoe",
+        "avatar": "https://randomuser.me/api/portraits/men/23.jpg",
+        "answer": "This is another sample answer in markdown format.",
+        "upvotes": 2,
+        "downvotes": 0
+      }
+    ]
+  },
+  {
+    "post": "photo",
+    "username": "Daniel",
+    "time": "10h",
+    "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
+    "image_link": "https://www.w3schools.com/w3images/lights.jpg"
+  },
+  {
+    "post": "code",
+    "username": "Michael",
+    "avatar": "https://randomuser.me/api/portraits/men/29.jpg",
+    "time": "2h",
+    "languages": ["java"],
+    "question": "#### Problem Statement  \n\n  \n  \nConsider the following class `Person`:\n\n```python \nclass Person:\n\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def __str__(self):\n        return f'{self.name} is {self.age} years old.'\n```\n\nCreate a subclass `Employee` of `Person` that has the following attributes:\n- `employee_id`: a string\n- `salary`: an integer\n\nThe `Employee` class should have a `__str__` method that returns a string of the following format:\n\n ```txt \n'{name} is {age} years old and is an employee with id: {employee_id}. Their salary is ${salary}.'\n```\n\n#### Requirements\n- Implement the `Employee` class as a subclass of `Person`.\n- Use inheritance to reuse the `__str__` method of the parent class.\n- Add the necessary attributes to the `Employee` class. \n\n#### Example\n\n```cmd\n>>> p = Person('John Doe', 30)\n>>> print(p)\nJohn Doe is 30 years old. \n>>> e = Employee('Jane Doe', 25, 'E001', 70000)\n>>> print(e)\nJane Doe is 25 years old and is an employee with id: E001. Their salary is $70000.\n```",
+    "status": "",
+    "answers": [
+      {
+        "username": "Jane",
+        "avatar": "https://randomuser.me/api/portraits/women/23.jpg",
+        "answer": "```java\npublic class HelloWorld {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println(\"Hello, World!\");\n\t}\n}\n```\nThe first line `public class HelloWorld` declares the class named `HelloWorld`. The class is declared with the `public` access modifier, which means that it can be accessed from anywhere.\n\nThe `main` method is the entry point of the program, and is executed when you run the program. It's declared with the `public static` access modifiers, which means that it can be executed without having to create an instance of the `HelloWorld` class.\n\nThe `System.out.println` line prints the message `Hello, World!` on the screen.",
+        "upvotes": 7,
+        "downvotes": 0
+      },
+      {
+        "username": "Robert",
+        "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
+        "answer": "```cpp\npublic class HelloWorld {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println(\"Hello, World!\");\n\t}\n}\n```\nThe code is a basic example of a Java program. The program declares a class named `HelloWorld` and inside it, there is a `main` method. The `main` method is executed when the program is run. In this method, the line `System.out.println(\"Hello, World!\");` is used to print the message `Hello, World!` on the screen.",
+        "upvotes": 6,
+        "downvotes": 1
+      },
+      {
+        "username": "John",
+        "avatar": "https://randomuser.me/api/portraits/men/12.jpg",
+        "answer": "```cpp\npublic class HelloWorld {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println(\"Hello, World!\");\n\t}\n}\n```\nThe code is a basic example of a Java program. The program declares a class named `HelloWorld` and inside it, there is a `main` method. The `main` method is executed when the program is run. In this method, the line `System.out.println(\"Hello, World!\");` is used to print the message `Hello, World!` on the screen.",
+        "upvotes": 12,
+        "downvotes": 10
+      }
+    ]
+  }
 ]

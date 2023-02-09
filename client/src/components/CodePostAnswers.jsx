@@ -6,7 +6,6 @@ import PostAnswer from "./CodePostAnswer";
 const CodePostAnswers = (answers) => {
   // console.log(answers)
   const [isOpen, setIsOpen] = useState(false);
-  const answersCount = 3
   const description = `Pretty simple asnwerall you need to do is this. 
   ${"```js \n const x = 24; \n //here the value x should be 30 and that should be true \nconst that = true\n ```"}
   
@@ -32,7 +31,7 @@ const CodePostAnswers = (answers) => {
             <AiFillCaretUp className="text-lg" />
           )}
         </button>
-        <p className="flex items-center justify-center bg-brandGrey rounded-full h-8 w-8">{answersCount}</p>
+        <p className="flex items-center justify-center bg-brandGrey rounded-full h-8 w-8">{answers.answers.length}</p>
       </div>
       <div
         className={`${!isOpen ? "max-h-0" : "max-h-[10000px]"} overflow-y-scroll duration-300`}
