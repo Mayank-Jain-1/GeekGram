@@ -10,14 +10,16 @@ import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CodePostAnswers from "./CodePostAnswers";
 
 const CodePost = ({
-  username,
+  data
+}) => {
+  let {  username,
   avatar,
   languages,
   question,
   status,
   title,
-  answers,
-}) => {
+  answers} =data
+  // console.log(data);
   title =
     "Issue with some react component. Cannot open it using this onClick Function";
   // status = "verified";

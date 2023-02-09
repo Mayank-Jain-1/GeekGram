@@ -4,7 +4,7 @@
     "username": "JohnDoe",
     "time": "12h",
     "avatar": "https://randomuser.me/api/portraits/men/23.jpg",
-    "image_link": "https://www.w3schools.com/w3images/fjords.jpg"
+    "photo": "https://www.w3schools.com/w3images/fjords.jpg"
   },
   {
     "post": "code",
@@ -73,7 +73,7 @@
     "username": "JaneDoe",
     "time": "1h",
     "avatar": "https://randomuser.me/api/portraits/women/11.jpg",
-    "image_link": "https://www.w3schools.com/w3images/mountains.jpg"
+    "photo": "https://www.w3schools.com/w3images/mountains.jpg"
   },
   {
     "post": "code",
@@ -122,7 +122,7 @@
     "username": "Daniel",
     "time": "10h",
     "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
-    "image_link": "https://www.w3schools.com/w3images/lights.jpg"
+    "photo": "https://www.w3schools.com/w3images/lights.jpg"
   },
   {
     "post": "code",

@@ -12,9 +12,9 @@ const Home = () => {
         {/* <PhotoPost />  */}
         {posts.map((post,index) => {
           if(post.post === 'photo'){
-            return <PhotoPost key={index} username={post.username} avatar={post.avatar} photo={post.image_link} time={post.time}/>
+            return <PhotoPost key={index} data={post}/>
           }else if(post.post ==='code') {
-            return <CodePost key={index} username={post.username} avatar={post.avatar} question={post.question} status={post.status} answers={post.answers} languages={post.languages}/>
+            return <CodePost key={index} data={post}/>
           }
         })}
       </div>

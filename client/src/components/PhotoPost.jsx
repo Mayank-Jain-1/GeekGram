@@ -6,7 +6,8 @@ import PostCommentBtn from "./PostCommentBtn";
 import PostLikeBtn from "./PostLikeBtn";
 import PostShareBtn from "./PostShareBtn";
 
-const PhotoPost = ({username, avatar, photo, time}) => {
+const PhotoPost = ({data}) => {
+  const {username, avatar, photo, time} = data
   const [isLiked, setIsLiked] = useState(false);
   const [commentsOpen, setCommentsOpen] = useState(false);
   return (
