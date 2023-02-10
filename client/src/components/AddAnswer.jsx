@@ -40,6 +40,9 @@ const CodePostAddAnswer = ({ addAnswer }) => {
 
         <button
           onClick={() => {
+            setisOpen(false);
+            setMode("edit");  
+            setAnswer('');
             addAnswer({
               username: "you",
               answer: answer,
@@ -48,10 +51,18 @@ const CodePostAddAnswer = ({ addAnswer }) => {
               avatar: "",
             });
           }}
-          className="text-brandAqua p-2 bg-brandGrey rounded-md"
+          className="text-brandAqua p-2 bg-brandGrey rounded-md border border-brandAqua"
         >
           {" "}
           Submit Answer
+        </button>
+
+        <button onClick={() => {
+          setisOpen(false);
+          setMode("edit");  
+          setAnswer('');
+        }} className="bg-brandGrey text-red-600 p-2 rounded-md border border-red-600 float-right">
+          Delete
         </button>
       </div>
     </section>
