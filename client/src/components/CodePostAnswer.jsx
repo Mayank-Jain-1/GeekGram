@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
+import MyReactMarkdown from "./MyReactMarkdown";
 
 const CodePostAnswer = ({ avatar, username, answer, upvotes, downvotes }) => {
   return (
@@ -26,29 +27,8 @@ const CodePostAnswer = ({ avatar, username, answer, upvotes, downvotes }) => {
             <AiFillCaretDown />
           </button>
         </div>
-        <ReactMarkdown
-          children={answer}
-          remarkPlugins={[remarkGfm]}
-          className="w-full p-3"
-          components={{
-            code({ node, inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || "");
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, "")}
-                  style={tomorrow}
-                  language={match[1]}
-                  PreTag="div"
-                  {...props}
-                />
-              ) : (
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              );
-            },
-          }}
-        />
+        <MyReactMarkdown text={answer} className="w-full p-3" />
+
       </div>
     </div>
   );
