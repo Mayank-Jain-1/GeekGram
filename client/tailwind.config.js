@@ -2,6 +2,7 @@
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: true,
   theme: {
     extend: {
       colors: {
@@ -20,8 +21,8 @@ module.exports = {
       },
       keyframes: {
         scaleUpDown: {
-          "0%,100%": {transform: "scale(1)"},
-          "50%": {transform:"scale(1.2)"},
+          "0%,100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.2)" },
         },
       },
     },

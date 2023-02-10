@@ -47,14 +47,3 @@ const CodePost = ({ data }) => {
 };
 
 export default CodePost;
-
-{
-  /* <div className="w-full h-8 bg-brandGrey flex items-center">
-              <button className="h-full px-3 flex items-center space-x-2">
-                <AiOutlineEdit /> 
-                <p>Edit</p>
-              </button>
-              <button>Preview</button>
-              <button></button>
-          </div> */
-}

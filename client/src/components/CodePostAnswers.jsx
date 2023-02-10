@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
+import CodePostAddAnswer from "./CodePostAddAnswer";
 import PostAnswer from "./CodePostAnswer";
 // import answers from  '../dummyData/dummyAnswers.json'
 
@@ -48,6 +49,7 @@ const CodePostAnswers = (answers) => {
         })
       }
 
+      <CodePostAddAnswer />
       </div>
     </section>
   );
