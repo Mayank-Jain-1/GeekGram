@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
-import CodePostAddAnswer from "./CodePostAddAnswer";
+import CodePostAddAnswer from "./AddAnswer";
 import PostAnswer from "./CodePostAnswer";
 // import answers from  '../dummyData/dummyAnswers.json'
 
-const CodePostAnswers = (answers) => {
-  // console.log(answers)
+const CodePostAnswers = ({answers}) => {
+  const [answersArray, setAnswersArray] = useState(answers)
+  // console.log(answers);
+
   const [isOpen, setIsOpen] = useState(false);
-  const description = `Pretty simple asnwerall you need to do is this. 
-  ${"```js \n const x = 24; \n //here the value x should be 30 and that should be true \nconst that = true\n ```"}
+  // console.log(typeof answersArray);
+  const addAnswer = (answer) => {
+    setAnswersArray([...answersArray, answer]);
+    console.log('updated');
+  }
+
   
-  This works because as 
-  
-  > (x>24 -20 = 4) and that is true
-  
-  Hope this helps. dont forget to upvote if it does helps..
-  `;
+
   return (
     <section className="p-3 border border-brandGrey">
       <div className="flex items-center space-x-4">
@@ -32,12 +33,12 @@ const CodePostAnswers = (answers) => {
             <AiFillCaretUp className="text-lg" />
           )}
         </button>
-        <p className="flex items-center justify-center bg-brandGrey rounded-full h-8 w-8">{answers.answers.length}</p>
+        <p className="flex items-center justify-center bg-brandGrey rounded-full h-8 w-8">{answersArray.length}</p>
       </div>
       <div
         className={`${!isOpen ? "max-h-0" : "max-h-[10000px]"} overflow-y-scroll duration-300`}
       >
-      {answers.answers.map((answer,index) => {
+      {answersArray.map((answer,index) => {
           return <PostAnswer 
           key={index}
           avatar={answer.avatar}
@@ -49,7 +50,7 @@ const CodePostAnswers = (answers) => {
         })
       }
 
-      <CodePostAddAnswer />
+      <CodePostAddAnswer addAnswer={addAnswer} />
       </div>
     </section>
   );

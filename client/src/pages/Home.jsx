@@ -13,7 +13,7 @@ const Home = () => {
         {posts.map((post,index) => {
           if(post.post === 'photo'){
             return <PhotoPost key={index} data={post}/>
-          }else if(post.post ==='code') {
+          }else  {
             return <CodePost key={index} data={post}/>
           }
         })}

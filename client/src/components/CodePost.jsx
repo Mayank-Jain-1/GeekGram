@@ -10,7 +10,6 @@ const CodePost = ({ data }) => {
   let { username, avatar, languages, question, status, title, answers } = data;
   title =
     "Issue with some react component. Cannot open it using this onClick Function";
-
   return (
     <div className="border-y border-brandGrey mb-10">
       <CodePostInfoBar avatar={avatar} username={username} languages={languages} status={status}/>

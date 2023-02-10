@@ -23,9 +23,9 @@ const CodePostInfoBar = ({avatar,username,languages,status}) => {
       </div>
       <div className="flex items-center space-x-3 px-2">
         {languages &&
-          languages.map((language) => {
+          languages.map((language,index) => {
             return (
-              <p className="p-1.5 bg-brandDark rounded-md">{language}</p>
+              <p key={index} className="p-1.5 bg-brandDark rounded-md">{language}</p>
             );
           })}
         {/* <p>{languages}</p> */}
