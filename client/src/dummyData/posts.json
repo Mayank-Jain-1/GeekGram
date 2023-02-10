@@ -7,6 +7,7 @@
     "photo": "https://www.w3schools.com/w3images/fjords.jpg"
   },
   {
+    "title": "something",
     "post": "code",
     "username": "Sarah",
     "avatar": "https://randomuser.me/api/portraits/women/34.jpg",
@@ -38,6 +39,7 @@
     ]
   },
   {
+    "title": "something",
     "post": "code",
     "username": "Robert",
     "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
@@ -76,6 +78,7 @@
     "photo": "https://www.w3schools.com/w3images/mountains.jpg"
   },
   {
+    "title": "something",
     "post": "code",
     "username": "Robert",
     "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
@@ -94,6 +97,7 @@
     ]
   },
   {
+    "title": "something",
     "post": "code",
     "username": "Sarah",
     "avatar": "https://randomuser.me/api/portraits/women/34.jpg",
@@ -125,6 +129,7 @@
     "photo": "https://www.w3schools.com/w3images/lights.jpg"
   },
   {
+    "title": "something",
     "post": "code",
     "username": "Michael",
     "avatar": "https://randomuser.me/api/portraits/men/29.jpg",
