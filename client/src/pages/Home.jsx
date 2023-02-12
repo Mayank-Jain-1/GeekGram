@@ -9,7 +9,6 @@ const Home = () => {
     <section className='w-full flex justify-center '>
       <div className='pt-16 md:pt-0 flex flex-col max-w-2xl w-full h-full'>
         <Stories />
-        {/* <PhotoPost />  */}
         {posts.map((post,index) => {
           if(post.post === 'photo'){
             return <PhotoPost key={index} data={post}/>
