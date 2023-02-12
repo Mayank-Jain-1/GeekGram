@@ -4,6 +4,8 @@ import AddAnswerViewBar from "./AddAnswerViewBar";
 import {} from "react-markdown/lib/react-markdown";
 
 import MyReactMarkdown from "./MyReactMarkdown";
+import GreenButton from "./GreenButton";
+import RedButton from "./RedButton";
 const CodePostAddAnswer = ({ addAnswer }) => {
   const [answer, setAnswer] = useState("");
   const handleChange = (event) => {
@@ -34,15 +36,19 @@ const CodePostAddAnswer = ({ addAnswer }) => {
               className="p-3 w-full min-h-[300px] bg-brandGrey rounded-lg rounded-tl-none outline-none"
             ></textarea>
           ) : (
-            <MyReactMarkdown text={answer} className='w-full p-3 min-h-[300px] border border-white rounded-md'/>
+            <MyReactMarkdown
+              text={answer}
+              className="w-full p-3 min-h-[300px] border border-white rounded-md"
+            />
           )}
         </div>
 
-        <button
+        <GreenButton
+          text="Submit Answer"
           onClick={() => {
             setisOpen(false);
-            setMode("edit");  
-            setAnswer('');
+            setMode("edit");
+            setAnswer("");
             addAnswer({
               username: "you",
               answer: answer,
@@ -51,19 +57,17 @@ const CodePostAddAnswer = ({ addAnswer }) => {
               avatar: "",
             });
           }}
-          className="text-brandAqua p-2 bg-brandGrey rounded-md border border-brandAqua"
-        >
-          {" "}
-          Submit Answer
-        </button>
+        />
 
-        <button onClick={() => {
-          setisOpen(false);
-          setMode("edit");  
-          setAnswer('');
-        }} className="bg-brandGrey text-red-600 p-2 rounded-md border border-red-600 float-right">
-          Delete
-        </button>
+        <RedButton
+          text="Delete"
+          onClick={() => {
+            setisOpen(false);
+            setMode("edit");
+            setAnswer("");
+          }}
+        />
+
       </div>
     </section>
   );
