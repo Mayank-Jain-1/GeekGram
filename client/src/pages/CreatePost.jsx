@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { MediaPicker, Stack } from "degen";
 import "degen/styles";
 import { FiHash, FiImage } from "react-icons/fi";
+import { BsPersonPlus } from "react-icons/bs";
 import { MdOutlineDescription } from "react-icons/md";
 import GreenButton from "../components/GreenButton";
 import RedButton from "../components/RedButton";
@@ -68,16 +69,16 @@ const CreatePost = () => {
                 onChange={handleChange}
                 type="text"
                 name="tagsString"
-                placeholder="#Advitya2023 @andrew_tate"
+                placeholder="#Advitya2023 #2Genders"
                 value={postState.tagsString}
                 className="bg-brandBase w-full border-b p-3 outline-none"
               />
             </div>
           </div>
           <div className="w-full">
-            <label htmlFor="" className="flex items-center space-x-5 mb-3 mt-8">
-              <FiHash className="text-3xl" />
-              <p className="text-xl">Tags and People</p>
+            <label htmlFor="" className="flex items-center space-x-5 mb-3 mt-8 px-1">
+              <BsPersonPlus className="text-3xl" />
+              <p className="text-xl">People</p>
             </label>
 
             <div className="px-4">
@@ -85,7 +86,7 @@ const CreatePost = () => {
                 onChange={handleChange}
                 type="text"
                 name="tagsString"
-                placeholder="#Advitya2023 @andrew_tate"
+                placeholder="@andrew_tate @elonmusk"
                 value={postState.tagsString}
                 className="bg-brandBase w-full border-b p-3 outline-none"
               />
