@@ -66,6 +66,7 @@ const CodePostAddAnswer = ({ addAnswer }) => {
             setMode("edit");
             setAnswer("");
           }}
+          className='float-right px-6'
         />
 
       </div>

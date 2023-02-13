@@ -4,9 +4,9 @@ import "degen/styles";
 import { FiHash, FiImage } from "react-icons/fi";
 import { MdOutlineDescription } from "react-icons/md";
 import GreenButton from "../components/GreenButton";
+import RedButton from "../components/RedButton";
 
 const CreatePost = () => {
-  // const mediaPicker = useRef();
   const [postState, setPostState] = useState({
     caption: "",
     file: null,
@@ -23,10 +23,8 @@ const CreatePost = () => {
 
   const handleMediaUpload = (e) => {
     setPostState({ ...postState, file: e });
-    setFileState({ ...fileState, uploading: true });
   };
   const handleSubmit = async (e) => {};
-  useEffect(() => {}, [postState.file]);
 
   return (
     <div className="">
@@ -40,7 +38,6 @@ const CreatePost = () => {
           onChange={(e) => handleMediaUpload(e)}
           maxSize={100}
           required
-          uploading={fileState.uploading}
           label="Choose or drag and drop and image"
         />
         <label htmlFor="" className="flex items-center space-x-5 mb-3 mt-8">
@@ -59,25 +56,51 @@ const CreatePost = () => {
           />
         </div>
 
-        <label htmlFor="" className="flex items-center space-x-5 mb-3 mt-8">
-          <FiHash className="text-3xl" />
-          <p className="text-xl">Tags and People</p>
-        </label>
+        <div className="flex">
+          <div className="w-full">
+            <label htmlFor="" className="flex items-center space-x-5 mb-3 mt-8">
+              <FiHash className="text-3xl" />
+              <p className="text-xl">Tags and People</p>
+            </label>
 
-        <div className="px-4">
-          <input
-            onChange={handleChange}
-            type="text"
-            name="tagsString"
-            placeholder="#Advitya2023 @andrew_tate"
-            value={postState.tagsString}
-            className="bg-brandBase w-full border-b p-3 outline-none"
-          />
+            <div className="px-4">
+              <input
+                onChange={handleChange}
+                type="text"
+                name="tagsString"
+                placeholder="#Advitya2023 @andrew_tate"
+                value={postState.tagsString}
+                className="bg-brandBase w-full border-b p-3 outline-none"
+              />
+            </div>
+          </div>
+          <div className="w-full">
+            <label htmlFor="" className="flex items-center space-x-5 mb-3 mt-8">
+              <FiHash className="text-3xl" />
+              <p className="text-xl">Tags and People</p>
+            </label>
+
+            <div className="px-4">
+              <input
+                onChange={handleChange}
+                type="text"
+                name="tagsString"
+                placeholder="#Advitya2023 @andrew_tate"
+                value={postState.tagsString}
+                className="bg-brandBase w-full border-b p-3 outline-none"
+              />
+            </div>
+          </div>
         </div>
         <GreenButton
           onClick={handleSubmit}
           text="Submit"
           className="mx-4 my-10 px-5"
+        />
+        <RedButton
+          onClick={handleSubmit}
+          text="Submit"
+          className="mx-4 my-10 px-5 float-right"
         />
       </form>
     </div>
