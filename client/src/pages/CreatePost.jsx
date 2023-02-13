@@ -19,7 +19,6 @@ const CreatePost = () => {
   });
   const [fileState, setFileState] = useState({
     error: false,
-    errorMessage: "Please upload an image",
   });
   const handleChange = (e) => {
     setPostState({ ...postState, [e.target.name]: e.target.value });
@@ -29,10 +28,13 @@ const CreatePost = () => {
     setPostState({ ...postState, file: e });
   };
   const handleSubmit = async (e) => {};
-  const handleReset = async (e) => {};
+  const handleReset = async (e) => {
+    e.preventDefault();
+    setFileState({...fileState, error:"Image is Required" });
+  };
 
   return (
-    <div className="">
+    <div className="px-4 mb-10">
       <form action="">
         <h1 className="text-center my-10">Create Post</h1>
         <label htmlFor="" className="flex items-center space-x-5  my-5">
@@ -42,6 +44,8 @@ const CreatePost = () => {
         <MediaPicker
           onChange={(e) => handleMediaUpload(e)}
           maxSize={100}
+          error={fileState.error}
+          // errorMessage={fileState.errorMessage}
           required
           label="Choose or drag and drop and image"
         />

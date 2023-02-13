@@ -9,13 +9,14 @@ const CreatePostInput = ({
 }) => {
   return (
     <div className={className}>
-      <input
+      <textarea
         onChange={onChange}
         type="text"
+        rows={1}
         name={name}
         placeholder={placeholder}
         value={value}
-        className="bg-brandBase w-full border-b p-3 outline-none"
+        className="bg-brandBase w-full border-b p-3 outline-none min-h-12"
       />
     </div>
   );
