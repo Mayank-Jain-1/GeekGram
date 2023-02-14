@@ -7,15 +7,15 @@ import { MdOutlineDescription } from "react-icons/md";
 import GreenButton from "../components/GreenButton";
 import RedButton from "../components/RedButton";
 import CreatePostInput from "../components/CreatePostInput";
+import Axios from 'axios'
 
 const CreatePost = () => {
   const [postState, setPostState] = useState({
-    caption: "",
+    description: "",
     file: null,
-    tagsString: "",
-    tagsArray: [],
-    peopleString: "",
-    peopleArray: [],
+    tags: "",
+    people: "",
+    mediaPickerKey:0
   });
   const [fileState, setFileState] = useState({
     error: false,
@@ -24,13 +24,42 @@ const CreatePost = () => {
     setPostState({ ...postState, [e.target.name]: e.target.value });
   };
 
+  const UploadToCloudinary = async (file) => {
+    // const cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
+    // const upload_preset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
+    const cloudName = 'dtmku7uhc';
+    const upload_preset = 'h1hu6ddg'
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", upload_preset);
+
+    const response = await Axios.post(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,formData)
+    console.log('response: ', response.data.secure_url);
+  }
+  const resetMediaPicker = () => {
+    setPostState({...postState, mediaPickerKey: postState.mediaPickerKey + 1 });
+  }
   const handleMediaUpload = (e) => {
     setPostState({ ...postState, file: e });
   };
-  const handleSubmit = async (e) => {};
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let tagArray = postState.tags.split(/\s+/).map((tag) => tag.trim().replace(/[#@]+/,'')).filter(tag => tag.length > 0);
+    let peopleArray = postState.people.split(/\s+/).map((person) => person.trim().replace(/[#@]+/,'')).filter(person => person.length > 0);
+    UploadToCloudinary(postState.file);
+
+  };
+
   const handleReset = async (e) => {
     e.preventDefault();
-    setFileState({...fileState, error:"Image is Required" });
+    setPostState({
+      description: "",
+      file: null,
+      tags: "",
+      people: "",
+      mediaPickerKey: postState.mediaPickerKey + 1
+    });
   };
 
   return (
@@ -42,8 +71,9 @@ const CreatePost = () => {
           <p className="text-xl">Add Image to be posted.</p>
         </label>
         <MediaPicker
+          key={postState.mediaPickerKey}
           onChange={(e) => handleMediaUpload(e)}
-          maxSize={100}
+          maxSize={1}
           error={fileState.error}
           // errorMessage={fileState.errorMessage}
           required
@@ -57,9 +87,9 @@ const CreatePost = () => {
         <CreatePostInput
           className="px-4"
           onChange={handleChange}
-          name="caption"
+          name="description"
           placeholder="Description..."
-          value={postState.caption}
+          value={postState.description}
         />
         {/* Tags and People */}
         <div className="flex">
@@ -72,9 +102,9 @@ const CreatePost = () => {
             <CreatePostInput
               className="px-4"
               onChange={handleChange}
-              name="tagsString"
+              name="tags"
               placeholder="#Advitya2023 #2Genders"
-              value={postState.tagsString}
+              value={postState.tags}
             />
           </div>
           <div className="w-full">
@@ -90,9 +120,9 @@ const CreatePost = () => {
               className="px-4"
               onChange={handleChange}
               type="text"
-              name="peopleString"
+              name="people"
               placeholder="@andrew_tate @elonmusk"
-              value={postState.peopleString}
+              value={postState.people}
             />
           </div>
         </div>
