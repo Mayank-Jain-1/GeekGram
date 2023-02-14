@@ -34,25 +34,57 @@ const CreatePost = () => {
     formData.append("upload_preset", upload_preset);
 
     const response = await Axios.post(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,formData)
-    console.log('response: ', response.data.secure_url);
+
+    if(response.status === 200) {
+      return {
+        status: 200,
+        url: response.data.secure_url
+      }
+    }else {
+      return {
+        status: response.status,
+      }
+    }
+
   }
-  const resetMediaPicker = () => {
-    setPostState({...postState, mediaPickerKey: postState.mediaPickerKey + 1 });
-  }
+
+
   const handleMediaUpload = (e) => {
     setPostState({ ...postState, file: e });
+    setFileState({ ...fileState, error: false });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let tagArray = postState.tags.split(/\s+/).map((tag) => tag.trim().replace(/[#@]+/,'')).filter(tag => tag.length > 0);
-    let peopleArray = postState.people.split(/\s+/).map((person) => person.trim().replace(/[#@]+/,'')).filter(person => person.length > 0);
-    UploadToCloudinary(postState.file);
+    if(!postState.file){
+      setFileState({...fileState, error: "Image is required" });
+      return;
+    }
+    const cloudinaryResponse = await UploadToCloudinary(postState.file)
+    if(cloudinaryResponse.status !== 200) {
+      console.error(cloudinaryResponse.status)
+    }
 
+    let tagArray = postState.tags.split(/\s+/).map((tag) => tag.trim().replace(/[#@]+/,'')).filter(tag => tag.length > 0);
+    
+    let peopleArray = postState.people.split(/\s+/).map((person) => person.trim().replace(/[#@]+/,'')).filter(person => person.length > 0);
+    
+    
+    UploadToCloudinary(postState.file);
+    const img_url = cloudinaryResponse.url;
+    const postData = {
+      image: img_url,
+      description: postState.description,
+      tags: tagArray,
+      people: peopleArray
+    };
+
+    // const postResponse = await Axios.post("http://localhost:5000/posts", postData)
+
+    console.log(postData)
   };
 
-  const handleReset = async (e) => {
-    e.preventDefault();
+  const resetForm = () => {
     setPostState({
       description: "",
       file: null,
@@ -60,6 +92,11 @@ const CreatePost = () => {
       people: "",
       mediaPickerKey: postState.mediaPickerKey + 1
     });
+  }
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    resetForm();
   };
 
   return (
