@@ -12,11 +12,11 @@ const CreatePostInput = ({
       <textarea
         onChange={onChange}
         type="text"
-        rows={1}
+        rows={window.innerWidth > 768 ? 1 : 2}
         name={name}
         placeholder={placeholder}
         value={value}
-        className="bg-brandBase w-full border-b p-3 outline-none min-h-12"
+        className="bg-brandBase w-full border-b p-3 outline-none "
       />
     </div>
   );
