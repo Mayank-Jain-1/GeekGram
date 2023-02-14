@@ -122,14 +122,13 @@ const CreatePost = () => {
         </label>
 
         <CreatePostInput
-          className="px-4"
           onChange={handleChange}
           name="description"
           placeholder="Description..."
           value={postState.description}
         />
         {/* Tags and People */}
-        <div className="flex">
+        <div className="flex space-x-10">
           <div className="w-full">
             <label htmlFor="" className="flex items-center space-x-5 mb-3 mt-8">
               <FiHash className="text-3xl" />
@@ -137,7 +136,6 @@ const CreatePost = () => {
             </label>
 
             <CreatePostInput
-              className="px-4"
               onChange={handleChange}
               name="tags"
               placeholder="#Advitya2023 #2Genders"
@@ -154,7 +152,6 @@ const CreatePost = () => {
             </label>
 
             <CreatePostInput
-              className="px-4"
               onChange={handleChange}
               type="text"
               name="people"

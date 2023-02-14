@@ -6,6 +6,7 @@ import {} from "react-markdown/lib/react-markdown";
 import MyReactMarkdown from "./MyReactMarkdown";
 import GreenButton from "./GreenButton";
 import RedButton from "./RedButton";
+import TextToMarkdown from "./TextToMarkdown";
 const CodePostAddAnswer = ({ addAnswer }) => {
   const [answer, setAnswer] = useState("");
   const handleChange = (event) => {
@@ -27,22 +28,7 @@ const CodePostAddAnswer = ({ addAnswer }) => {
       </button>
 
       <div className={`${isOpen ? "block" : "hidden"}`}>
-        <div className="mt-3 mb-5">
-          <AddAnswerViewBar mode={mode} setMode={setMode} />
-          {mode === "edit" ? (
-            <textarea
-              onChange={handleChange}
-              value={answer}
-              className="p-3 w-full min-h-[300px] bg-brandGrey rounded-lg rounded-tl-none outline-none"
-            ></textarea>
-          ) : (
-            <MyReactMarkdown
-              text={answer}
-              className="w-full p-3 min-h-[300px] border border-white rounded-md"
-            />
-          )}
-        </div>
-
+        <TextToMarkdown className='mt-3 mb-5' text={answer} onChange={handleChange}/>
         <GreenButton
           text="Submit Answer"
           onClick={() => {

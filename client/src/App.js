@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar";
 import Home from "./Pages/Home";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import CreatePost from "./Pages/CreatePost";
+import RaiseIssue from "./Pages/RaiseIssue";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route exact path="/createpost" element={<CreatePost />} />
+            <Route exact path="/raiseissue" element={<RaiseIssue />} />
           </Routes>
         </div>
       </div>
